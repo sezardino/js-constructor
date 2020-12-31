@@ -1,10 +1,14 @@
+import {objectToString} from './utils';
+
 const getTemplate = {
   column(content) {
     return `<div class="col-sm">${content}</div>`;
   },
 
   row(content, styles = '') {
-    return `<div class="row" style="${styles}">${content}</div>`;
+    return `<div class="row" style="${objectToString(
+      styles
+    )}">${content}</div>`;
   },
 
   block(content, styles = '') {
@@ -15,11 +19,11 @@ const getTemplate = {
     return this.block(`<${tag}>${value}</${tag}>`, styles);
   },
 
-  text({value}) {
-    return this.block(`<p>${value}</p>`);
+  text({value, options: {styles}}) {
+    return this.block(`<p>${value}</p>`, styles);
   },
 
-  columns({value}) {
+  columns({value, options: {styles}}) {
     const content = value
       .map(
         (content) => `
@@ -28,11 +32,16 @@ const getTemplate = {
     </div>`
       )
       .join('');
-    return this.row(content);
+    return this.row(content, styles);
   },
 
-  image({value}) {
-    return this.block(`<img src="${value}" />`);
+  image({value, options: {styles, alt, imageStyles}}) {
+    return this.block(
+      `<img src="${value}" alt="${alt}" style="${objectToString(
+        imageStyles
+      )}" />`,
+      styles
+    );
   },
 };
 
