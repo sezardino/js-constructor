@@ -1,33 +1,39 @@
 const getTemplate = {
-  title: (value) => `
-    <div class="row">
-      <div class="col-sm">
-        <h1>${value}</h1>
-      </div>
-    </div>`,
+  column(content) {
+    return `<div class="col-sm">${content}</div>`;
+  },
 
-  text: (value) => `
-  <div class="row">
+  row(content) {
+    return `<div class="row">${content}</div>`;
+  },
+
+  block(content) {
+    return this.row(this.column(content));
+  },
+
+  title(value) {
+    return this.block(`<h1>${value}</h1>`);
+  },
+
+  text(value) {
+    return this.block(`<p>${value}</p>`);
+  },
+
+  columns(value) {
+    const content = value
+      .map(
+        (content) => `
     <div class="col-sm">
-      <p>${value}</p>
-    </div>
-  </div>`,
+      <p>${content}</p>
+    </div>`
+      )
+      .join('');
+    return this.row(content);
+  },
 
-  columns: (value) => `
-    <div class="row">
-      ${value
-        .map(
-          (content) => `
-        <div class="col-sm">
-          <p>${content}</p>
-        </div>`
-        )
-        .join('')}
-    </div>`,
-  image: (value) => `
-    <div class="row">
-      <img src="${value}" />
-    </div>`,
+  image(value) {
+    return this.block(`<img src="${value}" />`);
+  },
 };
 
 export default getTemplate;
