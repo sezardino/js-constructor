@@ -16,5 +16,7 @@ const container = document.querySelector('#site');
 model.forEach((block) => {
   const {type, value} = block;
   const html = getTemplate[type](value);
-  container.insertAdjacentHTML('beforeend', html);
+  if (html) {
+    container.insertAdjacentHTML('beforeend', html);
+  }
 });
