@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel ./src/index.html --open",
+    "build": "parcel build ./src/index.html --no-source-maps"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/sezardino/js-constructor/issues"
   },
-  "homepage": "https://github.com/sezardino/js-constructor#readme"
+  "homepage": "https://github.com/sezardino/js-constructor#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
 }
