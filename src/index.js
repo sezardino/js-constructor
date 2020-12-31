@@ -1,21 +1,12 @@
 import './styles/main.css';
 import getTemplate from './templates';
+import model from './model';
 
-const model = [
-  {type: 'title', value: 'Hello World'},
-  {type: 'text', value: 'Some text'},
-  {type: 'columns', value: ['1', '2', '3']},
-  {
-    type: 'image',
-    value:
-      'https://img5.goodfon.ru/wallpaper/nbig/8/9c/abstraktsiia-fon-kartinka-sinii-goluboi-smeshenie-tsvetov-kr.jpg',
-  },
-];
 const container = document.querySelector('#site');
 
 model.forEach((block) => {
-  const {type, value} = block;
-  const html = getTemplate[type](value);
+  const {type} = block;
+  const html = getTemplate[type](block);
   if (html) {
     container.insertAdjacentHTML('beforeend', html);
   }

@@ -3,23 +3,23 @@ const getTemplate = {
     return `<div class="col-sm">${content}</div>`;
   },
 
-  row(content) {
-    return `<div class="row">${content}</div>`;
+  row(content, styles = '') {
+    return `<div class="row" style="${styles}">${content}</div>`;
   },
 
-  block(content) {
-    return this.row(this.column(content));
+  block(content, styles = '') {
+    return this.row(this.column(content), styles);
   },
 
-  title(value) {
-    return this.block(`<h1>${value}</h1>`);
+  title({value, options: {styles, tag = 'h1'}}) {
+    return this.block(`<${tag}>${value}</${tag}>`, styles);
   },
 
-  text(value) {
+  text({value}) {
     return this.block(`<p>${value}</p>`);
   },
 
-  columns(value) {
+  columns({value}) {
     const content = value
       .map(
         (content) => `
@@ -31,7 +31,7 @@ const getTemplate = {
     return this.row(content);
   },
 
-  image(value) {
+  image({value}) {
     return this.block(`<img src="${value}" />`);
   },
 };
