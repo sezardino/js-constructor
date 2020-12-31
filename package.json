@@ -1,0 +1,19 @@
+{
+  "name": "js-constructor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sezardino/js-constructor.git"
+  },
+  "author": "Edward <e.arechwa@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sezardino/js-constructor/issues"
+  },
+  "homepage": "https://github.com/sezardino/js-constructor#readme"
+}
