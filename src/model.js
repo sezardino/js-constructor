@@ -1,7 +1,19 @@
-import Block from './scripts/blocks/block';
+// export {
+//   ColumnsBlock,
+//   ImageBlock,
+//   TextBlock,
+//   TitleBlock,
 
+import {
+  ColumnsBlock,
+  ImageBlock,
+  TextBlock,
+  TitleBlock,
+} from './scripts/blocks';
+
+// } from './scripts/blocks/inde';
 const model = [
-  new Block('title', 'JavaScript constructor', {
+  new TitleBlock('JavaScript constructor', {
     tag: 'h2',
     styles: {
       background:
@@ -11,8 +23,7 @@ const model = [
       'text-align': 'center',
     },
   }),
-  new Block(
-    'text',
+  new TextBlock(
     'JavaScript Constructor created on pure JavaScript, without any frameworks and libraries',
     {
       styles: {
@@ -22,14 +33,13 @@ const model = [
       },
     }
   ),
-  new Block('columns', ['Content', 'for', 'columns'], {
+  new ColumnsBlock(['Content', 'for', 'columns'], {
     styles: {
       'text-align': 'center',
       padding: '1.5rem',
     },
   }),
-  new Block(
-    'image',
+  new ImageBlock(
     'https://img5.goodfon.ru/wallpaper/nbig/8/9c/abstraktsiia-fon-kartinka-sinii-goluboi-smeshenie-tsvetov-kr.jpg',
     {
       styles: {
