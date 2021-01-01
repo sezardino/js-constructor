@@ -1,11 +1,5 @@
 import '../styles/main.css';
+import Controller from './controller';
 import model from './model';
 
-const container = document.querySelector('#site');
-
-model.forEach((block) => {
-  const html = block.getTemplate();
-  if (html) {
-    container.insertAdjacentHTML('beforeend', html);
-  }
-});
+new Controller('#site').render(model);
