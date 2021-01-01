@@ -1,17 +1,5 @@
-// export {
-//   ColumnsBlock,
-//   ImageBlock,
-//   TextBlock,
-//   TitleBlock,
+import {ColumnsBlock, ImageBlock, TextBlock, TitleBlock} from './blocks';
 
-import {
-  ColumnsBlock,
-  ImageBlock,
-  TextBlock,
-  TitleBlock,
-} from './scripts/blocks';
-
-// } from './scripts/blocks/inde';
 const model = [
   new TitleBlock('JavaScript constructor', {
     tag: 'h2',

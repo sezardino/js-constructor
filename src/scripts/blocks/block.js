@@ -1,8 +1,11 @@
 class Block {
-  constructor(type, value, options) {
-    this.type = type;
+  constructor(value, options) {
     this.value = value;
     this.options = options;
+  }
+
+  getTemplate() {
+    throw new Error('Initialize method getTemplate to use them');
   }
 }
 
